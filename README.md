@@ -1,2 +1,2 @@
 # yocto
-Docker container for Yocto devlopment
+Docker container for Yocto development
