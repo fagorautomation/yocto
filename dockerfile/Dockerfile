@@ -1,6 +1,6 @@
 
 # Pull base image.
-FROM fagorautomation/ubuntu-base
+FROM fagorautomation/ubuntu-base:v1.0
 
 RUN apt-get update
 
