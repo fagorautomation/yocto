@@ -1,6 +1,8 @@
 
 # Pull base image.
-FROM fagorautomation/ubuntu-base:v1.0
+FROM fagorautomation/ubuntu-base:v1.01
+
+USER root
 
 RUN apt-get update
 
@@ -22,17 +24,7 @@ RUN apt-get install -y python-git
 # kernel compilation rpi needs this
 RUN apt-get install -y bc libncursesw5-dev
 
-
-RUN mkdir /home/developer && \
-echo "developer:x:1000:1000:Fagor Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
-echo "developer:x:1000:" >> /etc/group && \
-chown developer:developer -R /home/developer && \
-echo "developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 USER developer
-ENV HOME /home/developer
-WORKDIR /home/developer
-
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
