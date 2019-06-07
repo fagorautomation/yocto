@@ -24,6 +24,9 @@ RUN apt-get install -y python-git
 # kernel compilation rpi needs this
 RUN apt-get install -y bc libncursesw5-dev
 
+# Kernel CONFIG_UNWINDER_ORC need this
+RUN apt-get install -y libelf-dev
+
 USER developer
 
 # Use baseimage-docker's init system.
