@@ -27,12 +27,11 @@ RUN apt-get install -y bc libncursesw5-dev
 # Kernel CONFIG_UNWINDER_ORC need this
 RUN apt-get install -y libelf-dev
 
-# Copy MSC RSA credentials to have access to MSC Git repositories
+# Create a directory where we have to copy MSC RSA credentials to have access to MSC Git repositories
 RUN mkdir -p /home/developer/.ssh && \
 	chmod 700 /home/developer/.ssh && \
 	chown developer:developer /home/developer/.ssh
 
-COPY ./id_rsa.pub /home/developer/.ssh/
 
 RUN chown developer:developer /home/developer/.ssh/*
 
