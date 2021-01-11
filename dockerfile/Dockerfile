@@ -32,8 +32,7 @@ RUN mkdir -p /home/developer/.ssh && \
 	chmod 700 /home/developer/.ssh && \
 	chown developer:developer /home/developer/.ssh
 
-COPY id_rsa /home/developer/.ssh/
-COPY id_rsa.pub /home/developer/.ssh/
+COPY ./id_rsa.pub /home/developer/.ssh/
 
 RUN chown developer:developer /home/developer/.ssh/*
 
