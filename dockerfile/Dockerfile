@@ -33,8 +33,6 @@ RUN mkdir -p /home/developer/.ssh && \
 	chown developer:developer /home/developer/.ssh
 
 
-RUN chown developer:developer /home/developer/.ssh/*
-
 USER developer
 
 # Use baseimage-docker's init system.
